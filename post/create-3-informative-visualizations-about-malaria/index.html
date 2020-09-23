@@ -1,0 +1,194 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Create 3 informative visualizations about malaria | Gridea</title>
+<link rel="shortcut icon" href="https://akatuituji.github.io/favicon.ico?v=1600835028564">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://akatuituji.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Create 3 informative visualizations about malaria | Gridea - Atom Feed" href="https://akatuituji.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="There are three datasets in this project. We need to use different methods to visualize each datasets according to their..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://akatuituji.github.io">
+  <img class="avatar" src="https://akatuituji.github.io/images/avatar.png?v=1600835028564" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Create 3 informative visualizations about malaria
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-09-21
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>There are three datasets in this project. We need to use different methods to visualize each datasets according to their features. We will use seabon and plotnine to do the visualizations.</p>
+<h2 id="1-malaria_deaths">1. malaria_deaths</h2>
+<figure data-type="image" tabindex="1"><img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922202637.png" alt="avatar" loading="lazy"></figure>
+<p>Let’s see, there are four columns and they are Entity, Code, Year and Deaths. Since Entity and Code represent the same thing, we just need to choose one feature in our graphs. So we choose Code because it is short and convenient to show in graph. Since Year is continuous, we set it as x-axis, and use Deaths column as y-axis. We use plotnine package and divide all the data into six parts by the number of deaths.<br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922224355.png" alt="avatar" loading="lazy"><br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922224412.png" alt="avatar" loading="lazy"><br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922224004.png" alt="avatar" loading="lazy"><br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922224114.png" alt="avatar" loading="lazy"><br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922224053.png" alt="avatar" loading="lazy"><br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922224149.png" alt="avatar" loading="lazy"><br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922224203.png" alt="avatar" loading="lazy"></p>
+<h2 id="2-malaria_deaths_age">2. malaria_deaths_age：</h2>
+<p><img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922233943.png" alt="avatar" loading="lazy"><br>
+x-axis: Year/age group, y-axis: Deaths. Because there are 30780 rows, we will not set entity as x-axis. Instead we choose age and year to visualize and use seabon package. There are two graphs, one is for Year and the other is for age.<br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922233407.png" alt="avatar" loading="lazy"><br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922233417.png" alt="avatar" loading="lazy"></p>
+<h2 id="3-malaria_inc">3. malaria_inc：</h2>
+<p><img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922234001.png" alt="avatar" loading="lazy"><br>
+We choose seabon package. We set x-axis: Year/Code, y-axis: Incidence. We will have 2 graphs.<br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922233432.png" alt="avatar" loading="lazy"><br>
+<img src="https://github.com/akatuituji/Pic_blog/blob/master/20200922233443.png" alt="avatar" loading="lazy"></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-malaria_deaths">1. malaria_deaths</a></li>
+<li><a href="#2-malaria_deaths_age">2. malaria_deaths_age：</a></li>
+<li><a href="#3-malaria_inc">3. malaria_inc：</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://akatuituji.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://akatuituji.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
