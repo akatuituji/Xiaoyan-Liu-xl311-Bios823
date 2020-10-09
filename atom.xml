@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://akatuituji.github.io</id>
     <title>Xiaoyan&apos;s Blog</title>
-    <updated>2020-10-09T00:20:11.857Z</updated>
+    <updated>2020-10-09T00:25:57.012Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://akatuituji.github.io"/>
     <link rel="self" href="https://akatuituji.github.io/atom.xml"/>
@@ -10,4 +10,27 @@
     <logo>https://akatuituji.github.io/images/avatar.png</logo>
     <icon>https://akatuituji.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Xiaoyan&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Homework 4 Spotify Songs Data Set]]></title>
+        <id>https://akatuituji.github.io/post/homework-4-spotify-songs-data-set/</id>
+        <link href="https://akatuituji.github.io/post/homework-4-spotify-songs-data-set/">
+        </link>
+        <updated>2020-10-08T12:25:20.000Z</updated>
+        <content type="html"><![CDATA[<p>For this homework, we have two steps to finish it. The first thing is to download the Spotify songs data set and create a SQLite3 schema to store this data in at least 3rd normal form (3NF). The other thing is to use an SQL query to find the names of all playlists that contain instrumentals.</p>
+<ol>
+<li>We get the CSV file and use pandas to make it 3rd normal form. The table has already been 1NF since each cell contains a single value, no repeating groups and it has a primary key. So we just make it 2NF and 3NF. In the case, note that (track_id, track_album_id and playlist_id) is a candidate key. However, track_album_name and track_album_release_date depend only on track_album_id and not on track_id. Also, playlist_name, playlist_genre and playlist_subgenre depend only on playlist_id and not on track_id, so this violates 2NF.<br>
+<img src="https://akatuituji.github.io/post-images/1602187771064.png" alt="" loading="lazy"><br>
+We choose album feature to do the normalization. We select these columns that violate 2NF as a new dataframe. And reset the index to make it continuous. Then we insert a new column which is the same as index. So we get the table of album.<br>
+<img src="https://akatuituji.github.io/post-images/1602188066375.png" alt="" loading="lazy"><br>
+We can do the same thing for the playlist feature.<br>
+<img src="https://akatuituji.github.io/post-images/1602188180750.png" alt="" loading="lazy"><br>
+Finally, we merge these three tables. We just use number to raplace the album and playlist features.</li>
+<li>Next thing is to use an SQL query to find the names of all playlists that contain instrumentals. First we communicate with database from pandas<br>
+<img src="https://akatuituji.github.io/post-images/1602188397949.png" alt="" loading="lazy"><br>
+Then we use sql to select what we want.<img src="https://akatuituji.github.io/post-images/1602188591868.png" alt="" loading="lazy"><br>
+Finally we get the table that includes the names of all playlists that contain instrumentals.<br>
+<img src="https://akatuituji.github.io/post-images/1602188634708.png" alt="" loading="lazy"></li>
+</ol>
+]]></content>
+    </entry>
 </feed>

@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Homework 4 Spotify Songs Data Set | Xiaoyan&#39;s Blog</title>
+<link rel="shortcut icon" href="https://akatuituji.github.io/favicon.ico?v=1602203146394">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://akatuituji.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Homework 4 Spotify Songs Data Set | Xiaoyan&#39;s Blog - Atom Feed" href="https://akatuituji.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="For this homework, we have two steps to finish it. The first thing is to download the Spotify songs data set and create ..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://akatuituji.github.io">
+  <img class="avatar" src="https://akatuituji.github.io/images/avatar.png?v=1602203146394" alt="">
+  </a>
+  <h1 class="site-title">
+    Xiaoyan&#39;s Blog
+  </h1>
+  <p class="site-description">
+    For 823 homework's blogs
+  </p>
+  <div class="menu-container">
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Homework 4 Spotify Songs Data Set
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-10-08
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>For this homework, we have two steps to finish it. The first thing is to download the Spotify songs data set and create a SQLite3 schema to store this data in at least 3rd normal form (3NF). The other thing is to use an SQL query to find the names of all playlists that contain instrumentals.</p>
+<ol>
+<li>We get the CSV file and use pandas to make it 3rd normal form. The table has already been 1NF since each cell contains a single value, no repeating groups and it has a primary key. So we just make it 2NF and 3NF. In the case, note that (track_id, track_album_id and playlist_id) is a candidate key. However, track_album_name and track_album_release_date depend only on track_album_id and not on track_id. Also, playlist_name, playlist_genre and playlist_subgenre depend only on playlist_id and not on track_id, so this violates 2NF.<br>
+<img src="https://akatuituji.github.io/post-images/1602187771064.png" alt="" loading="lazy"><br>
+We choose album feature to do the normalization. We select these columns that violate 2NF as a new dataframe. And reset the index to make it continuous. Then we insert a new column which is the same as index. So we get the table of album.<br>
+<img src="https://akatuituji.github.io/post-images/1602188066375.png" alt="" loading="lazy"><br>
+We can do the same thing for the playlist feature.<br>
+<img src="https://akatuituji.github.io/post-images/1602188180750.png" alt="" loading="lazy"><br>
+Finally, we merge these three tables. We just use number to raplace the album and playlist features.</li>
+<li>Next thing is to use an SQL query to find the names of all playlists that contain instrumentals. First we communicate with database from pandas<br>
+<img src="https://akatuituji.github.io/post-images/1602188397949.png" alt="" loading="lazy"><br>
+Then we use sql to select what we want.<img src="https://akatuituji.github.io/post-images/1602188591868.png" alt="" loading="lazy"><br>
+Finally we get the table that includes the names of all playlists that contain instrumentals.<br>
+<img src="https://akatuituji.github.io/post-images/1602188634708.png" alt="" loading="lazy"></li>
+</ol>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  
+  <a class="rss" href="https://akatuituji.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
