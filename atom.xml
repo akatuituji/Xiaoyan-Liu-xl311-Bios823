@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://akatuituji.github.io</id>
     <title>Xiaoyan&apos;s Blog</title>
-    <updated>2020-10-23T04:23:33.095Z</updated>
+    <updated>2020-10-23T04:25:30.567Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://akatuituji.github.io"/>
     <link rel="self" href="https://akatuituji.github.io/atom.xml"/>
@@ -11,11 +11,11 @@
     <icon>https://akatuituji.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Xiaoyan&apos;s Blog</rights>
     <entry>
-        <title type="html"><![CDATA[Star Wars People]]></title>
+        <title type="html"><![CDATA[Homework5 Star Wars People]]></title>
         <id>https://akatuituji.github.io/post/star-wars-people/</id>
         <link href="https://akatuituji.github.io/post/star-wars-people/">
         </link>
-        <updated>2020-10-22T03:47:32.000Z</updated>
+        <updated>2020-10-21T15:47:32.000Z</updated>
         <content type="html"><![CDATA[<p>For this homework, We need to Use the requests library, download all the people in the Star Wars universe using the Star Wars API (https://swapi.dev/documentation). Show the name of the oldest person (or robot or alien) and list the titles of all the films they appeared in.</p>
 <ol>
 <li>We use requests to get the dataset and transform to dataframe.<br>
@@ -26,7 +26,8 @@
 <li>Then we deal with the unknown value in birth_year column, and change all the birth_year value into float type so that we can do sorting. After sorting, we get the oldest person (or robot or alien) Yoda.<br>
 <img src="https://akatuituji.github.io/post-images/1603426910503.png" alt="" loading="lazy"></li>
 <li>Finally we list the titles of all the films they appeared in.<br>
-<img src="https://akatuituji.github.io/post-images/1603426973165.png" alt="" loading="lazy"></li>
+<img src="https://akatuituji.github.io/post-images/1603426973165.png" alt="" loading="lazy"><br>
+The code is in the file Homework-823/hw5.</li>
 </ol>
 ]]></content>
     </entry>
