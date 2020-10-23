@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://akatuituji.github.io</id>
     <title>Xiaoyan&apos;s Blog</title>
-    <updated>2020-10-09T01:08:31.314Z</updated>
+    <updated>2020-10-23T04:23:33.095Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://akatuituji.github.io"/>
     <link rel="self" href="https://akatuituji.github.io/atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://akatuituji.github.io/images/avatar.png</logo>
     <icon>https://akatuituji.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Xiaoyan&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Star Wars People]]></title>
+        <id>https://akatuituji.github.io/post/star-wars-people/</id>
+        <link href="https://akatuituji.github.io/post/star-wars-people/">
+        </link>
+        <updated>2020-10-22T03:47:32.000Z</updated>
+        <content type="html"><![CDATA[<p>For this homework, We need to Use the requests library, download all the people in the Star Wars universe using the Star Wars API (https://swapi.dev/documentation). Show the name of the oldest person (or robot or alien) and list the titles of all the films they appeared in.</p>
+<ol>
+<li>We use requests to get the dataset and transform to dataframe.<br>
+<img src="https://akatuituji.github.io/post-images/1603425847853.png" alt="" loading="lazy"></li>
+<li>We need to get the list of the 82 people. So we use a while loop to get the information of all people.<br>
+<img src="https://akatuituji.github.io/post-images/1603426021398.png" alt="" loading="lazy"></li>
+<li>We set the name as out table's index so that we can choose the people we want conveniently.<img src="https://akatuituji.github.io/post-images/1603426437860.png" alt="" loading="lazy"></li>
+<li>Then we deal with the unknown value in birth_year column, and change all the birth_year value into float type so that we can do sorting. After sorting, we get the oldest person (or robot or alien) Yoda.<br>
+<img src="https://akatuituji.github.io/post-images/1603426910503.png" alt="" loading="lazy"></li>
+<li>Finally we list the titles of all the films they appeared in.<br>
+<img src="https://akatuituji.github.io/post-images/1603426973165.png" alt="" loading="lazy"></li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Homework 4 Spotify Songs Data Set]]></title>
         <id>https://akatuituji.github.io/post/homework-4-spotify-songs-data-set/</id>

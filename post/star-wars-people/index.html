@@ -2,16 +2,16 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Homework 4 Spotify Songs Data Set | Xiaoyan&#39;s Blog</title>
+<title>Star Wars People | Xiaoyan&#39;s Blog</title>
 <link rel="shortcut icon" href="https://akatuituji.github.io/favicon.ico?v=1603426987320">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://akatuituji.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Homework 4 Spotify Songs Data Set | Xiaoyan&#39;s Blog - Atom Feed" href="https://akatuituji.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Star Wars People | Xiaoyan&#39;s Blog - Atom Feed" href="https://akatuituji.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="For this homework, we have two steps to finish it. The first thing is to download the Spotify songs data set and create ..." />
+    <meta name="description" content="For this homework, We need to Use the requests library, download all the people in the Star Wars universe using the Star..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -50,34 +50,31 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Homework 4 Spotify Songs Data Set
+              Star Wars People
             </h2>
             <div class="post-info">
               <span>
-                2020-10-08
+                2020-10-21
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>For this homework, we have two steps to finish it. The first thing is to download the Spotify songs data set and create a SQLite3 schema to store this data in at least 3rd normal form (3NF). The other thing is to use an SQL query to find the names of all playlists that contain instrumentals.</p>
+                <p>For this homework, We need to Use the requests library, download all the people in the Star Wars universe using the Star Wars API (https://swapi.dev/documentation). Show the name of the oldest person (or robot or alien) and list the titles of all the films they appeared in.</p>
 <ol>
-<li>We get the CSV file and use pandas to make it 3rd normal form. The table has already been 1NF since each cell contains a single value, no repeating groups and it has a primary key. So we just make it 2NF and 3NF. In the case, note that (track_id, track_album_id and playlist_id) is a candidate key. However, track_album_name and track_album_release_date depend only on track_album_id and not on track_id. Also, playlist_name, playlist_genre and playlist_subgenre depend only on playlist_id and not on track_id, so this violates 2NF.<br>
-<img src="https://akatuituji.github.io/post-images/1602187771064.png" alt="" loading="lazy"><br>
-We choose album feature to do the normalization. We select these columns that violate 2NF as a new dataframe. And reset the index to make it continuous. Then we insert a new column which is the same as index. So we get the table of album.<br>
-<img src="https://akatuituji.github.io/post-images/1602188066375.png" alt="" loading="lazy"><br>
-We can do the same thing for the playlist feature.<br>
-<img src="https://akatuituji.github.io/post-images/1602188180750.png" alt="" loading="lazy"><br>
-Finally, we merge these three tables. We just use number to raplace the album and playlist features.</li>
-<li>Next thing is to use an SQL query to find the names of all playlists that contain instrumentals. First we communicate with database from pandas<br>
-<img src="https://akatuituji.github.io/post-images/1602188397949.png" alt="" loading="lazy"><br>
-Then we use sql to select what we want.<img src="https://akatuituji.github.io/post-images/1602188591868.png" alt="" loading="lazy"><br>
-Finally we get the table that includes the names of all playlists that contain instrumentals.<br>
-<img src="https://akatuituji.github.io/post-images/1602188634708.png" alt="" loading="lazy"></li>
+<li>We use requests to get the dataset and transform to dataframe.<br>
+<img src="https://akatuituji.github.io/post-images/1603425847853.png" alt="" loading="lazy"></li>
+<li>We need to get the list of the 82 people. So we use a while loop to get the information of all people.<br>
+<img src="https://akatuituji.github.io/post-images/1603426021398.png" alt="" loading="lazy"></li>
+<li>We set the name as out table's index so that we can choose the people we want conveniently.<img src="https://akatuituji.github.io/post-images/1603426437860.png" alt="" loading="lazy"></li>
+<li>Then we deal with the unknown value in birth_year column, and change all the birth_year value into float type so that we can do sorting. After sorting, we get the oldest person (or robot or alien) Yoda.<br>
+<img src="https://akatuituji.github.io/post-images/1603426910503.png" alt="" loading="lazy"></li>
+<li>Finally we list the titles of all the films they appeared in.<br>
+<img src="https://akatuituji.github.io/post-images/1603426973165.png" alt="" loading="lazy"></li>
 </ol>
 
               </div>
@@ -88,6 +85,15 @@ Finally we get the table that includes the names of all playlists that contain i
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://akatuituji.github.io/post/homework-4-spotify-songs-data-set/">
+              <h3 class="post-title">
+                Homework 4 Spotify Songs Data Set
+              </h3>
+            </a>
+          </div>
         
 
         
