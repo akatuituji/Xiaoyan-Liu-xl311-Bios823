@@ -2,16 +2,16 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Homework5 Star Wars People | Xiaoyan&#39;s Blog</title>
+<title>Homework 6 dashboard visualization of PhDs data | Xiaoyan&#39;s Blog</title>
 <link rel="shortcut icon" href="https://akatuituji.github.io/favicon.ico?v=1604714023462">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://akatuituji.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Homework5 Star Wars People | Xiaoyan&#39;s Blog - Atom Feed" href="https://akatuituji.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Homework 6 dashboard visualization of PhDs data | Xiaoyan&#39;s Blog - Atom Feed" href="https://akatuituji.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="For this homework, We need to Use the requests library, download all the people in the Star Wars universe using the Star..." />
+    <meta name="description" content="In this homework, we are required to download data of PhDs awarded in the US. And do some analysis in pandas. Then make ..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -50,11 +50,11 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Homework5 Star Wars People
+              Homework 6 dashboard visualization of PhDs data
             </h2>
             <div class="post-info">
               <span>
-                2020-10-21
+                2020-11-05
               </span>
               <span>
                 2 min read
@@ -64,23 +64,28 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>For this homework, We need to Use the requests library, download all the people in the Star Wars universe using the Star Wars API (https://swapi.dev/documentation). Show the name of the oldest person (or robot or alien) and list the titles of all the films they appeared in.</p>
-<ol>
-<li>We use requests to get the dataset and transform to dataframe.<br>
-<img src="https://akatuituji.github.io/post-images/1603425847853.png" alt="" loading="lazy"></li>
-<li>We need to get the list of the 82 people. So we use a while loop to get the information of all people.<br>
-<img src="https://akatuituji.github.io/post-images/1603426021398.png" alt="" loading="lazy"></li>
-<li>We set the name as out table's index so that we can choose the people we want conveniently.<img src="https://akatuituji.github.io/post-images/1603426437860.png" alt="" loading="lazy"></li>
-<li>Then we deal with the unknown value in birth_year column, and change all the birth_year value into float type so that we can do sorting. After sorting, we get the oldest person (or robot or alien) Yoda.<br>
-<img src="https://akatuituji.github.io/post-images/1603426910503.png" alt="" loading="lazy"></li>
-<li>Finally we list the titles of all the films they appeared in.<br>
-<img src="https://akatuituji.github.io/post-images/1603426973165.png" alt="" loading="lazy"><br>
-The code is in the file Homework-823/hw5.</li>
-</ol>
+                <p>In this homework, we are required to download data of PhDs awarded in the US. And do some analysis in pandas. Then make a dashboard visualization of a few interesting aspects of the data using dash or streamlit.</p>
+<h1 id="preparation">Preparation</h1>
+<p>First, we need to pip the streamlit. So what is streamlit? Streamlit is an open-source Python library that makes it easy to create and share beautiful, custom web apps for machine learning and data science. In just a few minutes you can build and deploy powerful data apps. Thus we can use it to create a dashboard and do the visualization.<br>
+<img src="https://akatuituji.github.io/post-images/1604711305372.png" alt="" loading="lazy"><br>
+And let‘s see the dataset  PhDs awarded in the US. These tables present detailed data on the demographic characteristics, educational history, sources of financial support, and postgraduation plans of doctorate recipients. Explore the Survey of Earned Doctorates data further via NCSES's interactive data tool.</p>
+<h1 id="make-a-dashboard">Make a Dashboard</h1>
+<p>The first step is to create a .py file and import the libraries we need.<br>
+<img src="https://akatuituji.github.io/post-images/1604713492323.png" alt="" loading="lazy"><br>
+Then we use pandas to make our dataframes suitable for visualization. We extract the column of year and let it be the x-axis and the other columns be y-axis.<br>
+<img src="https://akatuituji.github.io/post-images/1604713697224.png" alt="" loading="lazy"><br>
+Finally, we do the visualization.<br>
+<img src="https://akatuituji.github.io/post-images/1604713990966.png" alt="" loading="lazy"><br>
+And the code is below.<br>
+<img src="https://akatuituji.github.io/post-images/1604714017628.png" alt="" loading="lazy"></p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#preparation">Preparation</a></li>
+<li><a href="#make-a-dashboard">Make a Dashboard</a></li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -89,9 +94,9 @@ The code is in the file Homework-823/hw5.</li>
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://akatuituji.github.io/post/homework-4-spotify-songs-data-set/">
+            <a href="https://akatuituji.github.io/post/star-wars-people/">
               <h3 class="post-title">
-                Homework 4 Spotify Songs Data Set
+                Homework5 Star Wars People
               </h3>
             </a>
           </div>
