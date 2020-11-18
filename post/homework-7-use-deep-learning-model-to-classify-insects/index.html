@@ -2,16 +2,16 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Homework 6 dashboard visualization of PhDs data | Xiaoyan&#39;s Blog</title>
+<title>Homework 7 Use deep learning model to classify insects | Xiaoyan&#39;s Blog</title>
 <link rel="shortcut icon" href="https://akatuituji.github.io/favicon.ico?v=1605673991596">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://akatuituji.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Homework 6 dashboard visualization of PhDs data | Xiaoyan&#39;s Blog - Atom Feed" href="https://akatuituji.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Homework 7 Use deep learning model to classify insects | Xiaoyan&#39;s Blog - Atom Feed" href="https://akatuituji.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="In this homework, we are required to download data of PhDs awarded in the US. And do some analysis in pandas. Then make ..." />
+    <meta name="description" content="In this homework, We are required to train a deep learning model to classify beetles, cockroaches and dragonflies using ..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -50,11 +50,11 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Homework 6 dashboard visualization of PhDs data
+              Homework 7 Use deep learning model to classify insects
             </h2>
             <div class="post-info">
               <span>
-                2020-11-05
+                2020-11-14
               </span>
               <span>
                 2 min read
@@ -64,26 +64,38 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>In this homework, we are required to download data of PhDs awarded in the US. And do some analysis in pandas. Then make a dashboard visualization of a few interesting aspects of the data using dash or streamlit.</p>
+                <p>In this homework, We are required to train a deep learning model to classify beetles, cockroaches and dragonflies using these images. Note: Original images from https://www.insectimages.org/index.cfm. Blog about this, and explain how the neural network classified the images.</p>
+<h1 id="dataset">Dataset</h1>
+<p>The dataset includes three parts: beetles, cockroach and dragonfiles. And our task is to let the model tell which kind of insect it is when you choose an image.</p>
+<h1 id="beetles">beetles</h1>
+<figure data-type="image" tabindex="1"><img src="https://akatuituji.github.io/post-images/1605671375625.png" alt="" loading="lazy"></figure>
+<h1 id="cockroach">cockroach</h1>
+<figure data-type="image" tabindex="2"><img src="https://akatuituji.github.io/post-images/1605671383566.png" alt="" loading="lazy"></figure>
+<h1 id="dragonfiles">dragonfiles</h1>
+<figure data-type="image" tabindex="3"><img src="https://akatuituji.github.io/post-images/1605671441313.png" alt="" loading="lazy"></figure>
 <h1 id="preparation">Preparation</h1>
-<p>First, we need to pip the streamlit. So what is streamlit? Streamlit is an open-source Python library that makes it easy to create and share beautiful, custom web apps for machine learning and data science. In just a few minutes you can build and deploy powerful data apps. Thus we can use it to create a dashboard and do the visualization.<br>
-<img src="https://akatuituji.github.io/post-images/1604711305372.png" alt="" loading="lazy"><br>
-And let‘s see the dataset  PhDs awarded in the US. These tables present detailed data on the demographic characteristics, educational history, sources of financial support, and postgraduation plans of doctorate recipients. Explore the Survey of Earned Doctorates data further via NCSES's interactive data tool.</p>
-<h1 id="make-a-dashboard">Make a Dashboard</h1>
-<p>The first step is to create a .py file and import the libraries we need.<br>
-<img src="https://akatuituji.github.io/post-images/1604713492323.png" alt="" loading="lazy"><br>
-Then we use pandas to make our dataframes suitable for visualization. We extract the column of year and let it be the x-axis and the other columns be y-axis.<br>
-<img src="https://akatuituji.github.io/post-images/1604713697224.png" alt="" loading="lazy"><br>
-Finally, we do the visualization.<br>
-<img src="https://akatuituji.github.io/post-images/1604713990966.png" alt="" loading="lazy"><br>
-And the code is below.<br>
-<img src="https://akatuituji.github.io/post-images/1604714017628.png" alt="" loading="lazy"></p>
+<p>I use two functions to transfer the images to our train and test dataset. First we need to load these images to our jupyter notebook. After getting the path, we use another fuction to get the correct size and format as the input of our CNN.<br>
+<img src="https://akatuituji.github.io/post-images/1605672038810.png" alt="" loading="lazy"><br>
+<img src="https://akatuituji.github.io/post-images/1605672045083.png" alt="" loading="lazy"></p>
+<h1 id="build-cnn">Build CNN</h1>
+<p>Our CNN has four layers: One input layer, two hidden layers and one output layer.<br>
+<img src="https://akatuituji.github.io/post-images/1605672426643.png" alt="" loading="lazy"><br>
+And After training for 200 epochs, we get the accuracy of the model, which is 80.56%<br>
+<img src="https://akatuituji.github.io/post-images/1605673981687.png" alt="" loading="lazy"></p>
+<h1 id="how-the-nn-classified-the-images">How the NN classified the images</h1>
+<p>The main feature of the CNN network is the use of convolutional layers. This actually simulates the human visual nerve. A single neuron can only respond to certain image features, such as horizontal or vertical edges. It is very simple in itself, but these simple neurons form a layer, and after there are enough layers, sufficient features can be obtained.<br>
+The image of each insect has a value, and each value corresponds to a pixel value, and the magnitude of the value reflects the intensity of the pixel. By recognizing pixels, the CNN could classify the images.</p>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
+<li><a href="#dataset">Dataset</a></li>
+<li><a href="#beetles">beetles</a></li>
+<li><a href="#cockroach">cockroach</a></li>
+<li><a href="#dragonfiles">dragonfiles</a></li>
 <li><a href="#preparation">Preparation</a></li>
-<li><a href="#make-a-dashboard">Make a Dashboard</a></li>
+<li><a href="#build-cnn">Build CNN</a></li>
+<li><a href="#how-the-nn-classified-the-images">How the NN classified the images</a></li>
 </ul>
 
               </div>
@@ -94,9 +106,9 @@ And the code is below.<br>
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://akatuituji.github.io/post/star-wars-people/">
+            <a href="https://akatuituji.github.io/post/homework-6-dashboard-visualization-of-phds-data/">
               <h3 class="post-title">
-                Homework5 Star Wars People
+                Homework 6 dashboard visualization of PhDs data
               </h3>
             </a>
           </div>
