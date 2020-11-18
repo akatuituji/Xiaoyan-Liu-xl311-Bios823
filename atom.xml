@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://akatuituji.github.io</id>
     <title>Xiaoyan&apos;s Blog</title>
-    <updated>2020-11-18T04:33:15.046Z</updated>
+    <updated>2020-11-18T22:57:08.788Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://akatuituji.github.io"/>
     <link rel="self" href="https://akatuituji.github.io/atom.xml"/>
@@ -10,6 +10,31 @@
     <logo>https://akatuituji.github.io/images/avatar.png</logo>
     <icon>https://akatuituji.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Xiaoyan&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Homework 1 Xiaoyan Liu's First Blog]]></title>
+        <id>https://akatuituji.github.io/post/homework-1-xiaoyan-lius-first-blog/</id>
+        <link href="https://akatuituji.github.io/post/homework-1-xiaoyan-lius-first-blog/">
+        </link>
+        <updated>2020-11-16T18:26:54.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="about-me">About me</h1>
+<p>Hi, my name is Xiaoyan, a master student in ECE Program. This is my second year in Duke and I would like to find a job as a data scientist. I am glad to take Bios823 and hope to learn something that is useful for interview and my future work.<br>
+<img src="https://akatuituji.github.io/post-images/1605738718196.png" alt="" loading="lazy"></p>
+<h1 id="what-is-gridea">What is Gridea</h1>
+<p>Girdea is a static blog writing client. The project URL in Github is here: https://github.com/getgridea/gridea. And the client looks like this: <img src="https://akatuituji.github.io/post-images/1605739179807.png" alt="" loading="lazy"><br>
+To write a blog, you just need to Download the client, set your own repository related to the client, add a new blog and upload it. Most people would choose to use Jekyll or Hexo as a static templet and write their blogs. Compared with Jekyll or Hexo, Gridea is very easy to install, you don't need to set environment and install many things. Also, it is very easy to operate for a new blogger.</p>
+<h1 id="how-to-write-this-blog">How to write this blog</h1>
+<ol>
+<li>Sign up in Github and get a user name</li>
+<li>Create a new repository as a file to save contents of your blogs.<br>
+<img src="https://akatuituji.github.io/post-images/1605740036070.png" alt="" loading="lazy"></li>
+<li>Download Gridea client and let your repository connected with this client.<br>
+<img src="https://akatuituji.github.io/post-images/1605740138573.png" alt="" loading="lazy"></li>
+<li>Write your blog and upload it.<br>
+<img src="https://akatuituji.github.io/post-images/1605740217936.png" alt="" loading="lazy"><br>
+<img src="https://akatuituji.github.io/post-images/1605740224000.png" alt="" loading="lazy"></li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Homework 7 Use deep learning model to classify insects]]></title>
         <id>https://akatuituji.github.io/post/homework-7-use-deep-learning-model-to-classify-insects/</id>
