@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://akatuituji.github.io</id>
     <title>Xiaoyan&apos;s Blog</title>
-    <updated>2020-11-18T22:57:08.788Z</updated>
+    <updated>2020-11-21T01:13:53.322Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://akatuituji.github.io"/>
     <link rel="self" href="https://akatuituji.github.io/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://akatuituji.github.io/images/avatar.png</logo>
     <icon>https://akatuituji.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Xiaoyan&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Mortality Prediction Models using MIMIC-III]]></title>
+        <id>https://akatuituji.github.io/post/mortality-prediction-models-using-mimic-iii/</id>
+        <link href="https://akatuituji.github.io/post/mortality-prediction-models-using-mimic-iii/">
+        </link>
+        <updated>2020-11-20T12:02:41.000Z</updated>
+        <content type="html"><![CDATA[<p>The goal is to build a model framework to predict in-hospital mortality. The model would be useful to promptly identify high-risk patients who might be dead within hours or days since ICU admission, so that resources can be efficiently allocated during the early stage of ICU st.<br>
+We referred to the instruction form MIMIC official website to set up our database in PostgreSQL. We firstly downloaded the whole dataset from the website. And then we created the mimiciii schema and then build a set of empty tables. After that we import the CSV data files into the empty tables. To interface with Python, we use psycopg2 to connect to database.<br>
+In this project, to predict the mortality in the early stage of ICU stay, we are using three severity scores: SAPS II, APACHE II, and SOFA scores. For APACHE II [1], it is calculated from a patient's age and 12 routine physiological measurements. And measurements are measured during the first 24 hours after admission, and utilized in addition to information about previous health status (recent surgery, history of severe organ insufficiency, immunocompromised state) and baseline demographics such as age. Another key thing is that APACHE II only consider the most deranged physiology value physiology, which means we need to extract the minimum and maximum value with 24 hours.<br>
+In order to extract the target variables, we first need a deep understanding on the data schema. According our observation, we found out that the main ICU admission data are included in table “icustays”. And the variable required to calculated these 3 score are distributed in “labevents” table and “chartevents” table. And these two tables connect to “icustay” through a key called subjectID. Table 2 provides the list of extracted features used in the study.<br>
+<img src="https://akatuituji.github.io/post-images/1605921208070.png" alt="" loading="lazy"><br>
+Next, a series of determining variables are collected when predicting survival time after discharge from hospital admission. The collected variables are extracted from queries to the database and in some cases to the preprocessing of these. The distribution in classes attends only to organizational criteria.</p>
+<h2 id="age">Age:<img src="https://akatuituji.github.io/post-images/1605920832555.png" alt="" loading="lazy"></h2>
+<h2 id="sex">Sex:<img src="https://akatuituji.github.io/post-images/1605920888585.png" alt="" loading="lazy"></h2>
+<h2 id="marital-status">Marital status:<img src="https://akatuituji.github.io/post-images/1605920916598.png" alt="" loading="lazy"></h2>
+<h2 id="physiological-signals">Physiological signals:<img src="https://akatuituji.github.io/post-images/1605921019145.png" alt="" loading="lazy"></h2>
+<h2 id="length-of-stay-in-icu">Length of stay in ICU: <img src="https://akatuituji.github.io/post-images/1605921050393.png" alt="" loading="lazy"></h2>
+<h2 id="probability-distribution-of-icu-stay">Probability distribution of ICU stay: <img src="https://akatuituji.github.io/post-images/1605921078516.png" alt="" loading="lazy"></h2>
+<h2 id="probability-distribution-of-the-entire-hospital-stay">Probability distribution of the entire hospital stay:<img src="https://akatuituji.github.io/post-images/1605921112881.png" alt="" loading="lazy"></h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Homework 1 Xiaoyan Liu's First Blog]]></title>
         <id>https://akatuituji.github.io/post/homework-1-xiaoyan-lius-first-blog/</id>
